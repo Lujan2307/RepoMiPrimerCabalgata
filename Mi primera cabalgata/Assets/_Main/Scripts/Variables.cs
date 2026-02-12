@@ -1,25 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Variables : MonoBehaviour
 {
-    string MyName = "Miguel Angel";
+    //Declarar Variables
 
+    public string myName = "Miguel Angel";
+    public int edad = 19;
 
-
-
+    [SerializeField] private TMP_InputField _inputfield;
+    [SerializeField] private TMP_Text _saludo;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        print("Hola " + MyName);
+   
     }
 
     // Update is called once per frame
     void Update()
     {
-        print("Hola Mundo Uptade() !!");
+        myName = _inputfield.text;
+        _saludo.text = "Hola " + myName;
+
     }
 }
